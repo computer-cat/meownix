@@ -5,11 +5,11 @@ set -uexo pipefail
 echo "source /etc/profile.d/brew.sh" | tee -a /etc/bash.bashrc
 
 # Branding variables
-IMAGE_NAME="Amethyris"
-HOSTNAME="amethyris"
-HOME_URL="https://github.com/Smujb/amethyris"
-SUPPORT_URL="https://github.com/Smujb/amethyris"
-ID="amethyris"
+IMAGE_NAME="Meownix"
+HOSTNAME="meownix"
+HOME_URL="https://github.com/computer-cat/meownix"
+SUPPORT_URL="https://github.com/computer-cat/meownix"
+ID="meownix"
 ID_LIKE="arch"
 BUILD_ID="rolling"
 LOGO=archlinux-logo

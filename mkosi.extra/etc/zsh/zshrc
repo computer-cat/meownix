@@ -1,3 +1,0 @@
-#!/usr/bin/env zsh
-
-emulate sh -c 'source /etc/profile.d/brew.sh'

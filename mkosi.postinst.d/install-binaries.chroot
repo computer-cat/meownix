@@ -3,6 +3,5 @@
 set -uexo pipefail
 
 cd .sources
-install still/build/still /usr/bin
 
-pacman -U ./obs-vkcapture/*.pkg.tar.* ./wlogout/*.pkg.tar.* --noconfirm --disable-sandbox
+pacman -U ./greetd-dms-greeter-bin/*.pkg.tar.* ./z13ctl/*.pkg.tar.* --noconfirm --disable-sandbox

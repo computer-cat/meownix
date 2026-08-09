@@ -3,7 +3,7 @@
 set -uexo pipefail
 
 if [ $1 != "build" ]; then
-  exit
+exit
 fi
 
 # Ensure the sources dir exists and is empty
@@ -11,18 +11,11 @@ mkdir -p .sources
 rm -rf .sources/*
 cd .sources
 
-# Prepare still for an offline build
-git clone https://github.com/faergeek/still
-cd still
-meson setup --buildtype release build
-
 # Prepare PKGBUILDs for offline builds
-cd ..
 cp -R ../other_packages/* ./
-cd obs-vkcapture
+
+cd greetd-dms-greeter-bin
 env EUID=123 PATH=$(realpath .):$PATH makepkg -o
 
-cd ../wlogout
-# Import necessary pgp key
-gpg --import *.asc
+cd ../z13ctl
 env EUID=123 PATH=$(realpath .):$PATH makepkg -o

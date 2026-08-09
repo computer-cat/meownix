@@ -6,10 +6,8 @@ if [ "$container" != "mkosi" ]; then
     exec mkosi-chroot "$CHROOT_SCRIPT" "$@"
 fi
 
-# Build obs-vkcapture
-# We skip the PGP check here as we have already validated the sources in mkosi.prepare.d and we cannot import keys without a network connection
-cd .sources/obs-vkcapture
+cd .sources/greetd-dms-greeter-bin
 env EUID=123 PATH=$(realpath .):$PATH makepkg --noprepare --clean --force --skippgpcheck
 
-cd ../wlogout
+cd ../z13ctl
 env EUID=123 PATH=$(realpath .):$PATH makepkg --noprepare --clean --force --skippgpcheck
