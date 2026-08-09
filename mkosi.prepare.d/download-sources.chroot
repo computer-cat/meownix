@@ -11,7 +11,11 @@ mkdir -p .sources
 rm -rf .sources/*
 cd .sources
 
-# Prepare greetd-dms-greeter-bin for offline build
+# Prepare iio-niri for offline build
+git clone https://aur.archlinux.org/iio-niri.git
+cd iio-niri
+env EUID=123 PATH=$(realpath .):$PATH makepkg -o
+cd ..
 
 # Ditto, with z13ctl
 git clone https://aur.archlinux.org/z13ctl-bin.git 
@@ -20,4 +24,3 @@ env EUID=123 PATH=$(realpath .):$PATH makepkg -o
 cd ..
 
 curl -LO https://archive.archlinux.org/packages/l/linux/linux-7.1.5.arch1-2-x86_64.pkg.tar.zst
-curl -LO https://archive.archlinux.org/packages/l/linux/linux-headers-7.1.5.arch1-2-x86_64.pkg.tar.zst
