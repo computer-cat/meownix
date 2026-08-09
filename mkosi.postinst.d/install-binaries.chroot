@@ -4,4 +4,4 @@ set -uexo pipefail
 
 cd .sources
 
-pacman -U ./greetd-dms-greeter-bin/*.pkg.tar.* ./z13ctl/*.pkg.tar.* --noconfirm --disable-sandbox
+pacman -U ./greetd-dms-greeter-bin/*.pkg.tar.* ./z13ctl-bin/*.pkg.tar.* --noconfirm --disable-sandbox
