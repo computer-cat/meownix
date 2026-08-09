@@ -6,6 +6,4 @@ if [ "$container" != "mkosi" ]; then
     exec mkosi-chroot "$CHROOT_SCRIPT" "$@"
 fi
 
-pacman -U .sources/linux-7.1.5.arch1-2-x86_64.pkg.tar.zst \
-          .sources/linux-headers-7.1.5.arch1-2-x86_64.pkg.tar.zst \
-          --noconfirm
+pacman -U .sources/linux-7.1.5.arch1-2-x86_64.pkg.tar.zst --noconfirm
