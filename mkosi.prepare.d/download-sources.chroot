@@ -12,10 +12,6 @@ rm -rf .sources/*
 cd .sources
 
 # Prepare greetd-dms-greeter-bin for offline build
-git clone https://aur.archlinux.org/greetd-dms-greeter-bin.git
-cd greetd-dms-greeter-bin
-env EUID=123 PATH=$(realpath .):$PATH makepkg -o
-cd ..
 
 # Ditto, with z13ctl
 git clone https://aur.archlinux.org/z13ctl-bin.git 
