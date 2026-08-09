@@ -5,4 +5,3 @@ set -uexo pipefail
 cd .sources
 
 pacman -U ./z13ctl-bin/*.pkg.tar.* --noconfirm --disable-sandbox
-pacman -U ./iio-niri/*.pkg.tar.* --noconfirm --disable-sandbox
