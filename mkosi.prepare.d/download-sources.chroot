@@ -11,11 +11,13 @@ mkdir -p .sources
 rm -rf .sources/*
 cd .sources
 
-# Prepare PKGBUILDs for offline builds
-cp -R ../other_packages/* ./
-
+# Prepare greetd-dms-greeter-bin for offline build
+git clone https://aur.archlinux.org/greetd-dms-greeter-bin.git
 cd greetd-dms-greeter-bin
 env EUID=123 PATH=$(realpath .):$PATH makepkg -o
+cd ..
 
-cd ../z13ctl
+# Ditto, with z13ctl
+git clone https://aur.archlinux.org/z13ctl-bin.git 
+cd z13ctl-bin
 env EUID=123 PATH=$(realpath .):$PATH makepkg -o
