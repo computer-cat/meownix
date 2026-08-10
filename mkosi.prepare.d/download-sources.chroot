@@ -17,4 +17,4 @@ cd z13ctl-bin
 env EUID=123 PATH=$(realpath .):$PATH makepkg -o
 cd ..
 
-curl -LO https://archive.archlinux.org/packages/l/linux/linux-7.1.5.arch1-2-x86_64.pkg.tar.zst
+#curl -LO https://archive.archlinux.org/packages/l/linux/linux-7.1.5.arch1-2-x86_64.pkg.tar.zst
