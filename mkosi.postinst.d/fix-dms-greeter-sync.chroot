@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -uexo pipefail
+
+ln -s /usr/share/quickshell/dms/Modules/Greetd/assets/dms-greeter /usr/bin/dms-greeter
