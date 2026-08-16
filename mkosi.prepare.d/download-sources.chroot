@@ -16,3 +16,7 @@ git clone https://aur.archlinux.org/z13ctl-bin.git
 cd z13ctl-bin
 env EUID=123 PATH=$(realpath .):$PATH makepkg -o
 cd ..
+
+#gamescope session
+git clone --depth 1 https://github.com/OpenGamingCollective/gamescope-session.git /tmp/gamescope-session
+git clone --depth 1 https://github.com/OpenGamingCollective/gamescope-session-steam.git /tmp/gamescope-session-steam
