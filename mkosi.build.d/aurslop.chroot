@@ -8,6 +8,3 @@ fi
 
 cd .sources/z13ctl-bin
 env EUID=123 PATH=$(realpath .):$PATH makepkg --noprepare --clean --force --skippgpcheck
-
-cp -r /tmp/gamescope-session/usr "$DESTDIR/"
-cp -r /tmp/gamescope-session-steam/usr "$DESTDIR/"
