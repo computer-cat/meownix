@@ -1,5 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-cp -r /tmp/gamescope-session/usr "$DESTDIR/"
-cp -r /tmp/gamescope-session-steam/usr "$DESTDIR/"
