@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euo pipefail
+
+git clone --depth 1 https://github.com/OpenGamingCollective/gamescope-session.git /tmp/gamescope-session
+cp -r /tmp/gamescope-session/usr "$DESTDIR/"
+
+git clone --depth 1 https://github.com/OpenGamingCollective/gamescope-session-steam.git /tmp/gamescope-session-steam
+cp -r /tmp/gamescope-session-steam/usr "$DESTDIR/"
