@@ -1,0 +1,32 @@
+# This is modified from the pkgbuild at https://aur.archlinux.org/packages/noctalia-greeter
+# It is not automatically pulled from the AUR for security reasons; it is impossible to audit PKGBUILDs during automatic builds
+
+_pkgname=noctalia-greeter
+_tagver=1.2.1
+pkgname=noctalia-greeter
+pkgver=1.2.1
+pkgrel=1
+pkgdesc='Minimal greetd login greeter with a bundled wlroots compositor'
+arch=('x86_64' 'aarch64')
+url='https://github.com/noctalia-dev/noctalia-greeter'
+license=('MIT')
+options=('!debug')
+install=noctalia-greeter.install
+provides=('noctalia-greeter')
+conflicts=('noctalia-greeter-git' 'noctalia-greeter-bin')
+source=("${_pkgname}-${_tagver}.tar.gz::${url}/archive/refs/tags/v${_tagver}.tar.gz")
+sha256sums=('1d1c43494b74e75f4f18c5c0d2f5326b9b3b30f337156c05c45d4511a9a587e1')
+
+build() {
+  CXXFLAGS+=" -Wno-unused-result"
+  arch-meson "${_pkgname}-${_tagver}" build-release \
+    -Db_ndebug=true
+  meson compile -C build-release
+}
+
+package() {
+  meson install -C build-release --destdir "${pkgdir}"
+
+  install -Dm644 "${_pkgname}-${_tagver}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -Dm644 "${_pkgname}-${_tagver}/README.md" "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+}
