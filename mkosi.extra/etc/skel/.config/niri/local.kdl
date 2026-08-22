@@ -1,0 +1,175 @@
+spawn-sh-at-startup "qs -c tapiri"
+
+config-notification {
+    disable-failed
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+input {
+    focus-follows-mouse
+    touchpad {
+      scroll-factor 0.2
+      natural-scroll
+      tap
+      dwt
+      click-method "clickfinger"
+      accel-speed 0
+    }
+}
+
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+
+overview {
+    workspace-shadow {
+        off
+    }
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+animations {
+    workspace-switch {
+        spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
+    }
+    window-open {
+        duration-ms 150
+        curve "ease-out-expo"
+    }
+    window-close {
+        duration-ms 150
+        curve "ease-out-quad"
+    }
+    horizontal-view-movement {
+        spring damping-ratio=0.85 stiffness=423 epsilon=0.0001
+    }
+    window-movement {
+        spring damping-ratio=0.75 stiffness=323 epsilon=0.0001
+    }
+    window-resize {
+        spring damping-ratio=0.85 stiffness=423 epsilon=0.0001
+    }
+    config-notification-open-close {
+        spring damping-ratio=0.65 stiffness=923 epsilon=0.001
+    }
+    screenshot-ui-open {
+        duration-ms 200
+        curve "ease-out-quad"
+    }
+    overview-open-close {
+        spring damping-ratio=0.85 stiffness=800 epsilon=0.0001
+    }
+}
+// Window rules let you adjust behavior for individual windows.
+// Find more information on the wiki:
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
+// Work around WezTerm's initial configure bug
+// by setting an empty default-column-width.
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id="zoom"
+    open-floating true
+}
+
+debug {
+    honor-xdg-activation-with-invalid-serial
+
+}
+
+blur {
+    passes 1
+    offset 3
+    noise 0.02
+    saturation 1.5
+}
+
+// Enable blur behind the foot terminal.
+window-rule {
+    match app-id="^foot$"
+
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+// iio niri
+spawn-sh-at-startup "/home/may/.local/bin/iio-niri listen"
+
+layer-rule {
+	match namespace="nepenthes"
+	background-effect {
+		blur true
+		xray false
+	}
+}
+
+window-rule {
+	match title="FL Studio 2025"
+	open-fullscreen true
+}
+
+window-rule {
+	match app-id="gamescope*"
+    match title="PALauncher"
+    match title="Log In to Pearl Abyss | Pearl Abyss"
+	open-floating true
+}
+
+binds {
+	Mod+T {spawn "kitty";}
+    Mod+Tab { toggle-overview; }
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+    Mod+F12 { spawn "sudo" "/home/may/.local/bin/fixkb"; }
+    Mod+K { spawn "/home/may/.local/bin/toggle-wvkbd"; }
+    // copilot key lol
+    Mod+Shift+F23 { spawn "playerctl" "play-pause"; }
+    XF86Launch3 { spawn-sh "qs -c tapiri ipc call tapiri toggle"; }
+    
+}
+
+window-rule {
+	background-effect {
+		blur true
+		xray false
+	}
+}
+window-rule {
+    match app-id="com.usebottles.bottles"
+    opacity 0.9
+}
+
+environment {
+	XCURSOR_SIZE "24"
+	XCURSOR_THEME "Adwaita"
+}
+
+layout {
+	focus-ring {
+		off
+	}
+	border {
+        width 1
+	on
+		active-color "#ffffff14"
+		inactive-color "#FFFFFF14"
+	}
+}
