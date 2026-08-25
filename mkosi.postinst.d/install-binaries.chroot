@@ -4,4 +4,4 @@ set -uexo pipefail
 
 cd .sources
 
-pacman -U ./z13ctl-bin/*.pkg.tar.* ./noctalia-greeter/*.pkg.tar.* --noconfirm --disable-sandbox
+pacman -U ./noctalia-greeter/*.pkg.tar.* --noconfirm --disable-sandbox

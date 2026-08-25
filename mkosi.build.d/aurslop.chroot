@@ -6,8 +6,5 @@ if [ "$container" != "mkosi" ]; then
     exec mkosi-chroot "$CHROOT_SCRIPT" "$@"
 fi
 
-cd .sources/z13ctl-bin
-env EUID=123 PATH=$(realpath .):$PATH makepkg --noprepare --clean --force --skippgpcheck
-
-cd ../noctalia-greeter
+cd .sources/noctalia-greeter
 env EUID=123 PATH=$(realpath .):$PATH makepkg --noprepare --clean --force --skippgpcheck

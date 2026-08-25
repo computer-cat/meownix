@@ -11,12 +11,6 @@ mkdir -p .sources
 rm -rf .sources/*
 cd .sources
 
-# z13ctl
-git clone https://aur.archlinux.org/z13ctl-bin.git 
-cd z13ctl-bin
-env EUID=123 PATH=$(realpath .):$PATH makepkg -o
-cd ..
-
 #noctalia-greeter
 cp -R ../other_packages/* ./
 cd noctalia-greeter
