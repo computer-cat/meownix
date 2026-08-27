@@ -1,0 +1,46 @@
+# This is modified from the pkgbuild at https://aur.archlinux.org/packages/umbriel-git
+# It is not automatically pulled from the AUR for security reasons; it is impossible to audit PKGBUILDs during automatic builds
+
+pkgname=umbriel-git
+pkgver=0.1.0.r602.039d5c8
+pkgrel=1
+pkgdesc='A Wayland compositor built on wlroots and SceneFX'
+arch=('x86_64' 'aarch64')
+url='https://github.com/noctalia-dev/umbriel'
+license=('MIT')
+provides=('umbriel')
+conflicts=('umbriel')
+source=('git+https://github.com/noctalia-dev/umbriel.git#branch=main')
+b2sums=('SKIP')
+
+prepare() {
+  git -C "$srcdir/umbriel" submodule update --init --recursive
+}
+
+pkgver() {
+  cd "$srcdir/umbriel"
+  local version
+  version=$(sed -n "s/^[[:space:]]*version: '\([^']*\)'.*/\1/p" meson.build)
+  printf '%s.r%s.%s' \
+    "$version" \
+    "$(git rev-list --count HEAD)" \
+    "$(git rev-parse --short=7 HEAD)"
+}
+
+build() {
+  meson setup "$srcdir/umbriel/build" "$srcdir/umbriel" \
+    --buildtype=release \
+    --prefix=/usr \
+    --wrap-mode=nodownload
+  meson compile -C "$srcdir/umbriel/build"
+}
+
+check() {
+  meson test -C "$srcdir/umbriel/build" --print-errorlogs
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C "$srcdir/umbriel/build" --skip-subprojects
+  install -Dm644 "$srcdir/umbriel/LICENSE" \
+    "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

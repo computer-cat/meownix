@@ -8,3 +8,9 @@ fi
 
 cd .sources/noctalia-greeter
 env EUID=123 PATH=$(realpath .):$PATH makepkg --noprepare --clean --force --skippgpcheck
+
+cd ../umbriel-git
+env EUID=123 PATH=$(realpath .):$PATH makepkg --noprepare --clean --force --skippgpcheck
+
+cd ../xdg-desktop-portal-umbriel-git
+env EUID=123 PATH=$(realpath .):$PATH makepkg --noprepare --clean --force --skippgpcheck

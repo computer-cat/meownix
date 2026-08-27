@@ -15,3 +15,11 @@ cd .sources
 cp -R ../other_packages/* ./
 cd noctalia-greeter
 env EUID=123 PATH=$(realpath .):$PATH makepkg -o
+
+#umbriel
+cd ../umbriel-git
+env EUID=123 PATH=$(realpath .):$PATH makepkg -o
+
+#xdg-umbriel
+cd ../xdg-desktop-portal-umbriel-git
+env EUID=123 PATH=$(realpath .):$PATH makepkg -o
