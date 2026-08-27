@@ -2,8 +2,8 @@
 # It is not automatically pulled from the AUR for security reasons; it is impossible to audit PKGBUILDs during automatic builds
 
 pkgname=umbriel-git
-pkgver=0.1.0.r602.039d5c8
-pkgrel=1
+pkgver=0.1.0.r0.0
+pkgrel=2
 pkgdesc='A Wayland compositor built on wlroots and SceneFX'
 arch=('x86_64' 'aarch64')
 url='https://github.com/noctalia-dev/umbriel'
