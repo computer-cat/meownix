@@ -13,9 +13,6 @@ conflicts=('umbriel')
 source=('git+https://github.com/noctalia-dev/umbriel.git#branch=main')
 b2sums=('SKIP')
 
-prepare() {
-  git -C "$srcdir/umbriel" submodule update --init --recursive
-}
 
 pkgver() {
   cd "$srcdir/umbriel"

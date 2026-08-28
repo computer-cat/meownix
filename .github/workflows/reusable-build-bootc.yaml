@@ -44,7 +44,7 @@ on:
 env:
   DEFAULT_TAG: "${{ inputs.default-tag }}"
   IMAGE_DESC: "Opinionated swaywm + Arch Linux image"
-  IMAGE_KEYWORDS: "bootc,sway,arch"
+  IMAGE_KEYWORDS: "bootc,arch"
   IMAGE_LICENSE: Apache 2.0
   IMAGE_LOGO_URL: "https://raw.githubusercontent.com/JotaRandom/archlinux-artwork/refs/heads/master/logos/archlinux-vert-dark.svg"
   IMAGE_NAME: "${{ inputs.image-name }}"

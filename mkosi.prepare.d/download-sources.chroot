@@ -18,7 +18,10 @@ env EUID=123 PATH=$(realpath .):$PATH makepkg -o
 
 #umbriel
 cd ../umbriel-git
-env EUID=123 PATH=$(realpath .):$PATH makepkg -o
+env -u BUILDDIR EUID=123 PATH=$(realpath .):$PATH makepkg -o
+cd src/umbriel
+git submodule update --init --recursive
+cd ../../
 
 #xdg-umbriel
 cd ../xdg-desktop-portal-umbriel-git
