@@ -1,0 +1,112 @@
+[keybinds]
+
+# general
+"Mod+T" = "spawn:kitty"
+"Mod+E" = "spawn:nautilus"
+"Mod+Space" = "spawn:noctalia msg panel-toggle launcher"
+"Mod+S" = "spawn:noctalia msg panel-toggle control-center home"
+"Alt+Tab" = "spawn:noctalia msg window-switcher"
+"Mod+Comma" = "spawn:umbriel msg workspace-set-layout:scrolling"
+"Mod+Period" = "spawn:umbriel msg workspace-set-layout:dwindle"
+"Mod+N" = "spawn:noctalia msg panel-toggle control-center notifications"
+"Mod+P" = "spawn:noctalia msg panel-toggle control-center power"
+"Mod+B" = "spawn:noctalia msg panel-toggle control-center bluetooth"
+"Mod+W" = "spawn:noctalia msg panel-toggle control-center weather"
+"Mod+C" = "spawn:noctalia msg panel-toggle control-center calendar"
+"Mod+M" = "spawn:noctalia msg panel-toggle control-center system"
+"Mod+Tab" = { action = "overview-toggle", repeat = false }
+"Mod+Q" = { action = "window-close", repeat = false }
+
+# focus window
+"Mod+Left"  = "window-focus-left"
+"Mod+Down"  = "window-focus-down"
+"Mod+Up"    = "window-focus-up"
+"Mod+Right" = "window-focus-right"
+
+# move column/window
+"Mod+Ctrl+Left"  = "column-move-left"
+"Mod+Ctrl+Down"  = "window-move-down"
+"Mod+Ctrl+Up"    = "window-move-up"
+"Mod+Ctrl+Right" = "column-move-right"
+
+# monitor focus / move column to monitor
+"Mod+Shift+Left"  = "output-focus-left"
+"Mod+Shift+Down"  = "output-focus-down"
+"Mod+Shift+Up"    = "output-focus-up"
+"Mod+Shift+Right" = "output-focus-right"
+
+"Mod+Shift+Ctrl+Left"  = "column-move-to-output-left"
+"Mod+Shift+Ctrl+Down"  = "column-move-to-output-down"
+"Mod+Shift+Ctrl+Up"    = "column-move-to-output-up"
+"Mod+Shift+Ctrl+Right" = "column-move-to-output-right"
+
+# move workspace order
+"Mod+Shift+U"         = "workspace-move-down"
+"Mod+Shift+I"         = "workspace-move-up"
+
+# workspace scrolling
+"Mod+WheelDown" = "workspace-next"
+"Mod+WheelUp"   = "workspace-previous"
+"Mod+Ctrl+WheelDown" = "window-move-to-workspace-next"
+"Mod+Ctrl+WheelUp"   = "window-move-to-workspace-previous"
+
+"Mod+WheelRight" = "window-focus-right"
+"Mod+WheelLeft"  = "window-focus-left"
+"Mod+Ctrl+WheelRight" = "column-move-right"
+"Mod+Ctrl+WheelLeft"  = "column-move-left"
+
+"Mod+Shift+WheelDown" = "window-focus-right"
+"Mod+Shift+WheelUp"   = "window-focus-left"
+"Mod+Ctrl+Shift+WheelDown" = "column-move-right"
+"Mod+Ctrl+Shift+WheelUp"   = "column-move-left"
+
+# workspace numbers
+"Mod+1" = "workspace-switch:1"
+"Mod+2" = "workspace-switch:2"
+"Mod+3" = "workspace-switch:3"
+"Mod+4" = "workspace-switch:4"
+"Mod+5" = "workspace-switch:5"
+"Mod+6" = "workspace-switch:6"
+"Mod+7" = "workspace-switch:7"
+"Mod+8" = "workspace-switch:8"
+"Mod+9" = "workspace-switch:9"
+"Mod+Shift+1" = "window-move-to-workspace:1"
+"Mod+Shift+2" = "window-move-to-workspace:2"
+"Mod+Shift+3" = "window-move-to-workspace:3"
+"Mod+Shift+4" = "window-move-to-workspace:4"
+"Mod+Shift+5" = "window-move-to-workspace:5"
+"Mod+Shift+6" = "window-move-to-workspace:6"
+"Mod+Shift+7" = "window-move-to-workspace:7"
+"Mod+Shift+8" = "window-move-to-workspace:8"
+"Mod+Shift+9" = "window-move-to-workspace:9"
+
+# width/state toggles
+"Mod+R" = "window-cycle-width"
+"Mod+F" = "window-toggle-maximize"
+"Mod+Shift+F" = "window-toggle-fullscreen"
+"Mod+Ctrl+F" = "window-toggle-maximize-to-edges"
+
+"Mod+Minus" = "window-modify-width:-0.1"
+"Mod+Equal" = "window-modify-width:0.1"
+
+"Mod+V" = "window-toggle-floating"
+"Mod+Shift+V" = "spawn:noctalia msg panel-toggle clipboard"
+"Mod+Shift+N" = "spawn:noctalia msg panel-toggle noctalia/notes:panel"
+
+# screenshot (low functionality right now, will prob revisit down the line)
+"Mod+Shift+S" = "spawn:noctalia msg screenshot-region"
+
+# session
+"Mod+Shift+E" = "session-quit"
+"Mod+Shift+P" = "dpms-off"
+
+# media keys
+"Mod+Shift+F23" = "spawn:playerctl play-pause"
+"XF86AudioNext" = "spawn:playerctl next"
+"XF86AudioPrev" = "spawn:playerctl previous"
+"XF86AudioRaiseVolume" = "spawn:noctalia msg volume-up"
+"XF86AudioLowerVolume" = "spawn:noctalia msg volume-down"
+"XF86AudioMute" = "spawn:noctalia msg volume-mute"
+"XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up"
+"XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down"
+

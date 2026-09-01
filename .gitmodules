@@ -4,3 +4,4 @@
 [submodule "subprojects/homebrew-arch"]
 	path = subprojects/homebrew-arch
 	url = https://github.com/Lumaeris/homebrew-arch
+	
