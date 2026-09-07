@@ -1,0 +1,30 @@
+# This is modified from the pkgbuild at https://aur.archlinux.org/packages/gaze-bin
+# It is not automatically pulled from the AUR for security reasons; it is impossible to audit PKGBUILDs during automatic builds
+
+
+pkgname=gaze-bin
+pkgver=0.3.0
+pkgrel=1
+pkgdesc="Daemon, CLI, and PAM integration for Gaze"
+arch=('x86_64' )
+url="https://gaze.gundulabs.com"
+license=('GPL-3.0-or-later' )
+depends=()
+optdepends=()
+# This wrapper installs the same files under the same names as gaze, so it has
+# to claim that name. Without it an AUR helper treats any other package called
+# gaze as an upgrade candidate and silently replaces this one.
+provides=('gaze=0.3.0-1')
+conflicts=('gaze')
+backup=('etc/dbus-1/system.d/com.gundulabs.Gaze.conf' 'etc/gaze/config.toml' )
+install='gaze-bin.install'
+source=("gaze-0.3.0-1-x86_64.pkg.tar.zst::https://packages.gundulabs.com/arch/packages/gaze-0.3.0-1-x86_64.pkg.tar.zst")
+sha256sums=('7691808a21288916d37bcce647f52b75aed0bb09f7ba8414856973053bf8b563')
+
+package() {
+  bsdtar -xpf "$srcdir/gaze-0.3.0-1-x86_64.pkg.tar.zst" -C "$pkgdir"
+  # .PKGINFO/.MTREE/.INSTALL are pacman's metadata for the inner package and must not
+  # land in $pkgdir. The hooks .INSTALL carries are re-declared through install= above,
+  # which is the only way makepkg runs them for a wrapper package.
+  find "$pkgdir" -maxdepth 1 -type f -name '.*' -delete
+}
