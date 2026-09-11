@@ -1,0 +1,33 @@
+#Ryzen SMU PKGBUILD rewritten for meownix (no .install files required) - modified from ryzen_smu-dkms-git
+
+pkgname=ryzen_smu
+pkgver=0.1.7.r0.0
+pkgrel=1
+pkgdesc='Kernel driver exposing the AMD SMU on certain Ryzen processors'
+arch=('x86_64')
+url='https://github.com/amkillam/ryzen_smu'
+license=('GPL2')
+depends=('linux')
+makedepends=('linux-headers' 'git')
+source=('git+https://github.com/amkillam/ryzen_smu.git#branch=main')
+b2sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/ryzen_smu"
+  printf '%s.r%s.%s' \
+    "$(grep -oP '(?<=VERSION\s{4}:= )\S+' Makefile)" \
+    "$(git rev-list --count HEAD)" \
+    "$(git rev-parse --short=7 HEAD)"
+}
+
+build() {
+  cd "$srcdir/ryzen_smu"
+  _kernver="$(basename "$(find /usr/lib/modules -mindepth 1 -maxdepth 1 -type d | tail -n1)")"
+  make TARGET="${_kernver}"
+}
+
+package() {
+  cd "$srcdir/ryzen_smu"
+  _kernver="$(basename "$(find /usr/lib/modules -mindepth 1 -maxdepth 1 -type d | tail -n1)")"
+  install -Dm644 ryzen_smu.ko "${pkgdir}/usr/lib/modules/${_kernver}/extra/ryzen_smu.ko"
+}

@@ -27,3 +27,7 @@ env EUID=123 PATH=$(realpath .):$PATH makepkg -o
 #gaze (face recognition)
 cd ../gaze
 env EUID=123 PATH=$(realpath .):$PATH makepkg -o
+
+#ryzen_smu-dkms-git (undervolting support for the Z13 and others)
+cd ../ryzen_smu-dkms-git
+env EUID=123 PATH=$(realpath .):$PATH makepkg -o
