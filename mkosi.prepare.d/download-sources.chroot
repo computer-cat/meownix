@@ -31,3 +31,9 @@ env EUID=123 PATH=$(realpath .):$PATH makepkg -o
 #ryzen_smu-dkms-git (undervolting support for the Z13 and others)
 cd ../ryzen_smu-dkms-git
 env EUID=123 PATH=$(realpath .):$PATH makepkg -o
+
+#pin xwayland-satellite and linux-firmware-amdgpu
+cd ..
+mkdir pinned
+curl -LO https://archive.archlinux.org/packages/l/linux-firmware-amdgpu/linux-firmware-amdgpu-20260810-3-any.pkg.tar.zst
+curl -LO https://archive.archlinux.org/packages/x/xwayland-satellite/xwayland-satellite-0.8.1-2-x86_64.pkg.tar.zst
