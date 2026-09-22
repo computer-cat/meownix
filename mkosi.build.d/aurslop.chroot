@@ -18,6 +18,3 @@ env EUID=123 PATH=$(realpath .):$PATH makepkg --noprepare --clean --force --skip
 
 cd ../gaze
 env EUID=123 PATH=$(realpath .):$PATH makepkg --noprepare --clean --force --skippgpcheck
-
-cd ../ryzen_smu-dkms-git
-env EUID=123 PATH=$(realpath .):$PATH makepkg --noprepare --clean --force --skippgpcheck

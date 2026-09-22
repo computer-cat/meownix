@@ -4,4 +4,4 @@ set -uexo pipefail
 
 cd .sources
 
-pacman -U ./noctalia-greeter/*.pkg.tar.* ./umbriel-git/*.pkg.tar.* ./xdg-desktop-portal-umbriel-git/*.pkg.tar.* ./gaze/*.pkg.tar.* ./ryzen_smu-dkms-git/*.pkg.tar.* ./pinned/*.pkg.tar.* --noconfirm --disable-sandbox
+pacman -U ./noctalia-greeter/*.pkg.tar.* ./umbriel-git/*.pkg.tar.* ./xdg-desktop-portal-umbriel-git/*.pkg.tar.* ./gaze/*.pkg.tar.* ./pinned/*.pkg.tar.* --noconfirm --disable-sandbox
