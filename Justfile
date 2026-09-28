@@ -93,6 +93,7 @@ rechunk:
         -e CHUNKAH_CONFIG_STR quay.io/coreos/chunkah build \
         --label containers.bootc=1 \
         --compressed --max-layers 128 \
+        --prune /sysroot/ \
         -t $IMG | podman load
 
 clean:
