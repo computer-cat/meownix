@@ -2,9 +2,9 @@
 # It is not automatically pulled from the AUR for security reasons; it is impossible to audit PKGBUILDs during automatic builds
 
 _pkgname=noctalia-greeter
-_tagver=1.2.1
+_tagver=1.6.0
 pkgname=noctalia-greeter
-pkgver=1.2.1
+pkgver=1.6.0
 pkgrel=1
 pkgdesc='Minimal greetd login greeter with a bundled wlroots compositor'
 arch=('x86_64' 'aarch64')
@@ -14,7 +14,7 @@ options=('!debug')
 provides=('noctalia-greeter')
 conflicts=('noctalia-greeter-git' 'noctalia-greeter-bin')
 source=("${_pkgname}-${_tagver}.tar.gz::${url}/archive/refs/tags/v${_tagver}.tar.gz")
-sha256sums=('1d1c43494b74e75f4f18c5c0d2f5326b9b3b30f337156c05c45d4511a9a587e1')
+sha256sums=('f23ebf07cbe4508971c08b0b81d2b5bfc4ec1ec45605d8f8fb01b799743a70b6')
 
 build() {
   CXXFLAGS+=" -Wno-unused-result"
