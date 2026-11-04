@@ -1,5 +1,7 @@
 # Meow~~mix~~nix!
 
+**Archived 11/03/26 - image repo moved to personal forgejo**
+
 This repository is for my personal Arch bootc image, heavily based on [Amethyris](https://github.com/Smujb/amethyris) 
 
 Meownix currently includes a full usable Umbriel + Noctalia v5 desktop including noctalia-greeter as well as a set of packages that I use day to day. Many things included are specific to my workflow however the base image is kept relatively lean. Software not baked in is intended to be installed with flatpak, brew, or distrobox.
